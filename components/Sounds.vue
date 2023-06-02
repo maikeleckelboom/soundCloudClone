@@ -6,7 +6,7 @@ const { data: sounds, pending, error } = await useAsyncData('sounds', () => $fet
   { transform: (data: { body: Sound[] }) => data.body.map(s => {
     return {
       name: s.name,
-      url: `${s.url.replace('public', '')}`
+      url: `${s.url}`
     }
   }) }
 )
