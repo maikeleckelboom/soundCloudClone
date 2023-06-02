@@ -10,12 +10,12 @@ export type Sound = {
 const titelCase = (str: string) => str.split('-').map((word) => word[0].toUpperCase() + word.slice(1)).join(' ')
 
 export default defineEventHandler((event) => {
-  const relativeFolderPath = process.cwd() + '/public/assets/sounds'
+  const relativeFolderPath = process.cwd() + '/assets/sounds'
   const files = fs.readdirSync(relativeFolderPath).filter((file) => file.endsWith('.mp3') || file.endsWith('.wav'))
   const sounds = files.map((sound) => ({
     name: titelCase(sound.split('.').shift() as string),
     mime: sound.split('.').pop(),
-    url: path.join('/assets/sounds', sound)
+    url: relativeFolderPath + '/' + sound
   })) as Sound[]
 
   return {

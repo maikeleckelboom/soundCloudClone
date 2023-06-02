@@ -14,12 +14,12 @@ useHead({
 
 <template>
   <NuxtLoadingIndicator :color='useColorGradient()'/>
- <div class="h-full flex items-center w-full">
-   <NuxtLayout>
-     <NuxtPage/>
-     <NavBar/>
-   </NuxtLayout>
- </div>
+  <div class="h-full flex items-center w-full">
+    <NuxtLayout>
+      <NuxtPage/>
+      <NavBar/>
+    </NuxtLayout>
+  </div>
   <VitePwaManifest/>
 </template>
 
