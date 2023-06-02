@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <div class=''>
     <AuthStatus/>
-  </div>
 </template>
 
 <style>
