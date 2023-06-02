@@ -3,31 +3,37 @@ import WaveSurfer from 'wavesurfer.js'
 import { Ref } from 'vue'
 
 const colorScheme = shallowReactive({
-  primary: '#b1c6ff',
-  primaryOn: '#002c70',
-  primaryContainer: '#00419d',
-  primaryOnContainer: '#d9e2ff',
-  primaryInverse: '#0057cd',
-  primaryInverseOn: '#d9e2ff',
-  secondary: '#c0c6dc',
-  secondaryOn: '#2a3042',
-  secondaryContainer: '#404659',
-  secondaryOnContainer: '#dce2f9',
-  tertiary: '#e0bbdd',
-  tertiaryOn: '#412742',
-  tertiaryContainer: '#593d59',
-  tertiaryOnContainer: '#fdd7fa',
+  primary: '#ff8800',
+  onPrimary: '#4e2600',
+  primaryContainer: '#6f3800',
+  onPrimaryContainer: '#ffdcc4',
+  secondary: '#e4bfa7',
+  onSecondary: '#422b1a',
+  secondaryContainer: '#5b412f',
+  onSecondaryContainer: '#ffdcc4',
+  tertiary: '#c6ca95',
+  onTertiary: '#2f330c',
+  tertiaryContainer: '#464a20',
+  onTertiaryContainer: '#e3e7af',
   error: '#ffb4ab',
-  errorOn: '#690005',
+  onError: '#690005',
   errorContainer: '#93000a',
-  errorOnContainer: '#ffb4ab',
-  background: '#1b1b1f',
-  backgroundOn: '#e3e2e6',
-  surface: '#1b1b1f',
-  surfaceOn: '#e3e2e6',
-  surfaceVariant: '#44464f',
-  surfaceVariantOn: '#c5c6d0'
+  onErrorContainer: '#ffb4ab',
+  background: '#201a17',
+  onBackground: '#ece0da',
+  surface: '#201a17',
+  onSurface: '#ece0da',
+  surfaceVariant: '#52443b',
+  onSurfaceVariant: '#d6c3b7',
+  outline: '#9f8d82',
+  outlineVariant: '#52443b',
+  shadow: '#000000',
+  scrim: '#000000',
+  inverseSurface: '#ece0da',
+  inverseOnSurface: '#362f2b',
+  inversePrimary: '#924c00',
 })
+
 
 //
 // const { isMuted: isForcedMuted } = inject(APP_AUDIO_INJECTION_KEY, {
@@ -63,11 +69,11 @@ onMounted(() => {
   track.value = WaveSurfer.create({
     container: trackWaves.value as HTMLElement,
     waveColor: colorScheme.primary,
-    progressColor: colorScheme.error,
+    progressColor: colorScheme.primaryContainer,
     barWidth: 4,
     barRadius: 2,
     cursorWidth: 2,
-    cursorColor: colorScheme.errorOn,
+    cursorColor: colorScheme.inversePrimary,
     hideScrollbar: true
   })
 })

@@ -8,9 +8,9 @@ const scrollProgress = computed(() => y.value / 200)
 
 <template>
   <header class='w-full min-h-14 items-center flex flex-nowrap sticky top-0 z-30 justify-between gap-4 p-4  '>
-    <button class="">
+    <NuxtLink to="/" class="flex">
       <Icon class="w-10 h-10 text-on-surface" name="ph:soundcloud-logo"/>
-    </button>
+    </NuxtLink>
     <div class="flex flex-nowrap gap-4">
       <button class="px-3 py-2 border border-on-surface text-on-surface font-semibold rounded-md">
         <span>Sign in</span>

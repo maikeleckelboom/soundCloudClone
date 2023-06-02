@@ -1,21 +1,23 @@
 <script lang='ts' setup>
 import GithubLoginButton from '~/components/GithubLoginButton.vue'
-import { APP_AUDIO_INJECTION_KEY } from '~/context'
-
-const { data: tracks, error } = await useSupabaseClient()
-  .from('tracks')
-  .select('*')
-  .order('id', { ascending: true })
-
+// go to /discover if user is logged in
 
 const user = useSupabaseUser()
+const router = useRouter()
+watch(() => user.value, (user) => {
+  if (user) {
+    router.push('/discover')
+  }
+})
 </script>
 
 <template>
-  <div v-if='user'>
-    <h1>You are logged in.</h1>
-  </div>
-  <div v-else>
-    <GithubLoginButton />
-  </div>
+ <div class="h-full">
+   <div v-if='user' class="flex h-full">
+     <h1>You are logged in.</h1>
+   </div>
+   <div v-else>
+     <GithubLoginButton />
+   </div>
+ </div>
 </template>
