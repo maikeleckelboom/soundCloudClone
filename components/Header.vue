@@ -1,6 +1,5 @@
 <script lang='ts' setup>
-const {x, y} = inject('scroll', {
-  x: ref<number>(0),
+const { y} = inject('scroll', {
   y: ref<number>(0)
 })
 

@@ -4,20 +4,9 @@ import {useScroll} from "#imports";
 
 const layoutElement = useCurrentElement() as Ref<HTMLElement>
 
-const {x,y, arrivedState, isScrolling, measure, directions} = useScroll(layoutElement, {
-  onScroll: (e) => {
-    console.log(e)
-  }
-})
-
-provide('scroll', {
-  x,
-  y,
-  arrivedState,
-  isScrolling,
-  measure,
-  directions
-})
+provide('scroll', useScroll(layoutElement, {
+  onScroll: (e) => {}
+}))
 </script>
 
 <template>
