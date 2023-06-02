@@ -1,15 +1,10 @@
 <script lang='ts' setup>
-import { Sound } from '~/server/api/sounds'
 import SoundTrack from '~/components/SoundTrack.vue'
+const { data: tracks, pending, error } = await useSupabaseClient()
+    .from('tracks')
+    .select('*')
+    .order('id', { ascending: true })
 
-const { data: sounds, pending, error } = await useAsyncData('sounds', () => $fetch(`/api/sounds`),
-  { transform: (data: { body: Sound[] }) => data.body.map(s => {
-    return {
-      name: s.name,
-      url: `${s.url}`
-    }
-  }) }
-)
 </script>
 
 <template>
@@ -22,7 +17,7 @@ const { data: sounds, pending, error } = await useAsyncData('sounds', () => $fet
     </div>
     <div v-else>
       <SoundTrack
-        v-for='sound in sounds' :key='sound'
+        v-for='sound in tracks' :key='sound'
         :name='sound.name'
         :src='sound.url'
       />
