@@ -3,7 +3,12 @@ import { Sound } from '~/server/api/sounds'
 import SoundTrack from '~/components/SoundTrack.vue'
 
 const { data: sounds, pending, error } = await useAsyncData('sounds', () => $fetch(`/api/sounds`),
-  { transform: (data: { body: Sound[] }) => data.body }
+  { transform: (data: { body: Sound[] }) => data.body.map(s => {
+    return {
+      name: s.name,
+      url: `${s.url.replace('public', '')}`
+    }
+  }) }
 )
 </script>
 

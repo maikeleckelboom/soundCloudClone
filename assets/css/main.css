@@ -23,8 +23,11 @@
     }
 }
 
-html, body, body > * {
-    min-height: 100%;
+
+html,
+body,
+#__nuxt {
+    @apply h-full w-full;
 }
 
 body {
@@ -37,19 +40,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    --primary: var(--md-sys-color-primary)
 }
 
-body,
-body * {
-    transition: var(--transition, none)
+h1 {
+    @apply text-headline-medium;
 }
 
-@screen sm {
-    h1 {
-        @apply text-headline-medium;
-    }
-}
 
 @screen md {
     h1 {
@@ -59,10 +55,6 @@ body * {
 
 h2 {
     @apply text-headline-medium  text-on-background font-bold mb-4;
-}
-
-h3 {
-    /*@apply text-headline-small text-on-background font-extrabold mb-4*/
 }
 
 p {

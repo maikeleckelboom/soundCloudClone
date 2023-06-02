@@ -134,7 +134,6 @@ const onSeek = (progress: number) => {
   if (!track.value) return
 
   track.value.seekTo(progress)
-  // track.value.play()
 }
 
 const onStop = () => {
@@ -238,7 +237,7 @@ const currentTimeText = computed(() => {
 
 <template>
   <div
-    class='relative min-h-38 w-full min-w-96 my-12 bg-surface-level-1 rounded-md border border-transparent outline-none hover:opacity-100  opacity-70 focus:opacity-100 focus-within:opacity-100 focus-visible:opacity-100'
+    class='relative min-h-38 w-full min-w-96 my-4 bg-surface-level-1 rounded-md border border-transparent outline-none hover:opacity-100  opacity-70 focus:opacity-100 focus-within:opacity-100 focus-visible:opacity-100'
     tabindex='0'
   >
     <div class='flex justify-between items-center m-2'>

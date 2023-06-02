@@ -3,8 +3,9 @@
 </script>
 
 <template>
-  <div class=''>
-    <AuthStatus/>
+  <div class="flex flex-col flex-1 px-4">
+    <h1>Trending</h1>
+
   </div>
 </template>
 
